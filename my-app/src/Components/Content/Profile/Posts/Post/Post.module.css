@@ -1,0 +1,73 @@
+.post {
+    display: grid;
+
+    grid-template-areas:
+    "a i"
+    "m m"
+    "l l";
+
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
+
+    margin-top: 30px;
+}
+
+.ava {
+    grid-area: a;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.information {
+    grid-area: i;
+}
+
+.name {
+    margin: 0;
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.time {
+    margin: 0;
+    font-size: 13px;
+    color: gray;
+}
+
+.message {
+    grid-area: m;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5ebf1;
+}
+
+.like {
+    grid-area: l;
+}
+
+.button {
+    border: none;
+    background-color: rgba(0,0,0,0);
+    background-image: url("../../../../../like.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.button:hover,
+.button:focus{
+    background-position-y: -20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.count {
+    font-size: 17px;
+    line-height: 18px;
+    vertical-align: top;
+}

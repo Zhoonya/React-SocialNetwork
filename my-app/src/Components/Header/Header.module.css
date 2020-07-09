@@ -1,0 +1,18 @@
+.header {
+    grid-area: h;
+    background-color: #3792CB;
+
+    display: grid;
+    grid-template-areas:
+            ". l . .";
+    grid-template-columns: 2fr 12fr 2fr;
+    grid-gap: 10px;
+}
+
+.logo {
+    grid-area: l;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+}

@@ -1,0 +1,43 @@
+.ava {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.post {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/*.textarea {*/
+/*    flex-grow: 1;*/
+/*    margin: 0 5px;*/
+/*    height: 40px;*/
+/*    resize: none;*/
+/*    border: 1px solid #e5ebf1;*/
+/*    border-radius: 3px;*/
+/*}*/
+
+
+.add {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.add:hover,
+.add:focus {
+    background-color: #3792CB;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}

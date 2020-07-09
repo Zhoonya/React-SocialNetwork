@@ -1,0 +1,28 @@
+.container {
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.item {
+    display: block;
+    text-decoration: none;
+    color: darkblue;
+    padding: 7px 15px;
+    border-radius: 3px;
+}
+
+.item:hover,
+.item:focus,
+.activeLink {
+    /*background-color: #f4f9fd;*/
+    background-color: #3792CB;
+    color: white;
+    outline: none;
+}
+
+.nav {
+    grid-area: n;
+    /*background-color: white;*/
+    /*border-radius: 3px;*/
+}
