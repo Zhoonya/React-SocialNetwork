@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Users.module.css";
 import Preloader from "../../Preloader/Preloader";
+import {NavLink} from "react-router-dom";
 
 // class Users extends React.Component{
 //     componentDidMount() {
@@ -78,7 +79,9 @@ export default function Users (props) {
                 props.users.map((user) => {
                         return (
                             <div key={user.id} className={styles.user}>
-                                <img src={user.photos.small !== null ? user.photos.small : require(`../../../usersPhoto/04.png`)}  className={styles.ava} height="100"/>
+                                <NavLink to={"/profile/" + user.id}>
+                                    <img src={user.photos.small !== null ? user.photos.small : require(`../../../usersPhoto/04.png`)}  className={styles.ava} height="100"/>
+                                </NavLink>
                                 <div className={styles.information}>
                                     <h3 className={styles.name}>{user.name}</h3>
                                     {/*<p className={styles.location}>{user.location.country}, {user.location.city}</p>*/}
