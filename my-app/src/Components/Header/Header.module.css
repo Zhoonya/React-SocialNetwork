@@ -4,9 +4,10 @@
 
     display: grid;
     grid-template-areas:
-            ". l . .";
-    grid-template-columns: 2fr 12fr 2fr;
+            ". l li .";
+    grid-template-columns: 2fr 9fr 3fr 2fr;
     grid-gap: 10px;
+    align-items: center;
 }
 
 .logo {
@@ -15,4 +16,16 @@
     height: 40px;
     width: 40px;
     margin: 10px;
+}
+
+.login {
+    grid-area: li;
+    margin-left: auto;
+    display: inline-block;
+    color: white;
+}
+
+.loginLink {
+    text-decoration: none;
+    color: white;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Users.module.css";
 import Preloader from "../../Preloader/Preloader";
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 // class Users extends React.Component{
 //     componentDidMount() {
@@ -77,20 +78,46 @@ export default function Users (props) {
 
             {props.isFetching ? <Preloader/> :
                 props.users.map((user) => {
-                        return (
-                            <div key={user.id} className={styles.user}>
-                                <NavLink to={"/profile/" + user.id}>
-                                    <img src={user.photos.small !== null ? user.photos.small : require(`../../../usersPhoto/04.png`)}  className={styles.ava} height="100"/>
-                                </NavLink>
-                                <div className={styles.information}>
-                                    <h3 className={styles.name}>{user.name}</h3>
-                                    {/*<p className={styles.location}>{user.location.country}, {user.location.city}</p>*/}
-                                </div>
-                                {user.followed
-                                    ? <button className={styles.following} onClick={() => {props.unfollow(user.id)}}>Follow</button>
-                                    : <button className={styles.following} onClick={() => {props.follow(user.id)}}>Unfollow</button> }
+                    return (
+                        <div key={user.id} className={styles.user}>
+                            <NavLink to={"/profile/" + user.id}>
+                                <img src={user.photos.small !== null ? user.photos.small : require(`../../../usersPhoto/04.png`)}  className={styles.ava} height="100"/>
+                            </NavLink>
+                            <div className={styles.information}>
+                                <h3 className={styles.name}>{user.name}</h3>
+                                {/*<p className={styles.location}>{user.location.country}, {user.location.city}</p>*/}
                             </div>
-                        )
+                            {user.followed
+                                ? <button className={styles.following} onClick={() => {
+                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
+                                        withCredentials: true,
+                                        headers: {
+                                            "API-KEY": "bc8edd7a-1cd6-4f52-81e7-dff6464c7445"
+                                        }
+                                    })
+                                        .then((response) => {
+                                            console.log("lalala");
+                                            if (response.data.resultCode == 0) {
+                                                props.unfollow(user.id);
+                                            }
+                                        });
+                                }}>Unfollow</button>
+                                : <button className={styles.following} onClick={() => {
+                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
+                                        withCredentials: true,
+                                        headers: {
+                                            "API-KEY": "bc8edd7a-1cd6-4f52-81e7-dff6464c7445"
+                                        }
+                                    })
+                                        .then((response) => {
+                                            console.log("lolool");
+                                            if (response.data.resultCode == 0) {
+                                                props.follow(user.id);
+                                            }
+                                        });
+                                }}>Follow</button> }
+                        </div>
+                    )
                     })
             }
 
