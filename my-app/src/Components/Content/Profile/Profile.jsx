@@ -4,9 +4,11 @@ import ava from "../../../usersPhoto/ava.jpg";
 import NewPostContainer from "./NewPost/NewPostContainer";
 import PostsContainer from "./Posts/PostsContainer";
 import Preloader from "../../Preloader/Preloader";
-import photo from "../../../usersPhoto/04.png"
+import photo from "../../../usersPhoto/04.png";
+
 
 export default function Profile (props) {
+
     if (!props.profile) {
         return <Preloader/>
     }

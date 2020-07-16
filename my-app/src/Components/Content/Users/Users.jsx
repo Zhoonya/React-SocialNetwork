@@ -11,8 +11,6 @@ export default function Users (props) {
         pages.push(i);
     }
 
-    console.log(props);
-
     return (
         <div>
             <div>

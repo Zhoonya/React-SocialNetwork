@@ -1,7 +1,6 @@
 import React from "react";
 import Users from "./Users";
 import {connect} from "react-redux";
-import {setCurrentPageActionCreator} from "../../../redux/users-reducer";
 
 import {getUsersThunkCreator, unfollowThunkCreator, followThunkCreator} from "../../../redux/users-reducer";
 

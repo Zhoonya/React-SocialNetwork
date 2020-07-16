@@ -6,6 +6,10 @@ import MessagesContainer from "./Messages/MessagesContainer";
 
 
 export default function Dialogs (props) {
+    // if(!props.isAuth) {
+    //     return <Redirect to={"/login"}/>
+    // }
+
     return (
         <div className={styles.container}>
             <div className={styles.dialogs}>
