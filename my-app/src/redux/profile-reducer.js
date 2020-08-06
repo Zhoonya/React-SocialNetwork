@@ -1,8 +1,8 @@
-import {usersAPI} from "../api/api";
+import {usersAPI, profileAPI} from "../api/api";
 
 const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
+const SET_STATUS = "SET_STATUS";
 
 const initialState = {
     posts: [
@@ -11,8 +11,8 @@ const initialState = {
         {id: "2", date: "13 june 2020", message: "I'm fat soft kitty!", likesCount: "35"},
         {id: "1", date: "11 june 2020", message: "Hi! I'm here!", likesCount: "20"},
     ],
-    newPostText: "Hi",
     profile: null,
+    status: "",
 };
 
 export const profileReducer = (state = initialState, action) => {
@@ -22,7 +22,7 @@ export const profileReducer = (state = initialState, action) => {
             const newPost = {
                 id: "5",
                 date: String(new Date()),
-                message: state.newPostText,
+                message: action.post,
                 likesCount: "0",
             };
             const stateCopy = {
@@ -32,13 +32,12 @@ export const profileReducer = (state = initialState, action) => {
             stateCopy.newPostText = "";
             return stateCopy;
         }
-        case UPDATE_NEW_POST_TEXT: {
-            const stateCopy = {...state};
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
-        }
         case SET_USER_PROFILE: {
             const stateCopy = {...state, profile: action.profile};
+            return stateCopy;
+        }
+        case SET_STATUS: {
+            const stateCopy = {...state, status: action.status};
             return stateCopy;
         }
         default:
@@ -46,16 +45,10 @@ export const profileReducer = (state = initialState, action) => {
     }
 };
 
-export const addPostActionCreator = () => {
+export const addPostActionCreator = (post) => {
     return {
         type: ADD_POST,
-    };
-};
-
-export const updateNewPostTextActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text,
+        post
     };
 };
 
@@ -66,11 +59,39 @@ export const setUserProfileActionCreator = (profile) => {
     };
 };
 
+export const setStatusActionCreator = (status) => {
+    return {
+        type: SET_STATUS,
+        status
+    };
+};
+
 export const getUserProfileThunkCreator = (userId) => {
     return ((dispatch) => {
         usersAPI.getProfile(userId)
             .then((response) => {
                 dispatch(setUserProfileActionCreator(response.data));
+            });
+    })
+};
+
+export const getStatusThunkCreator = (userId) => {
+    return ((dispatch) => {
+        profileAPI.getStatus(userId)
+            .then((response) => {
+                dispatch(setStatusActionCreator(response.data));
+            });
+    })
+};
+
+export const updateStatusThunkCreator = (status) => {
+    return ((dispatch) => {
+        profileAPI.updateStatus(status)
+            .then((response) => {
+                if (response.data.resultCode === 0) {
+                    dispatch(setStatusActionCreator(status));
+                }
+
             });
     })
 };

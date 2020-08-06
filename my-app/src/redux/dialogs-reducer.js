@@ -1,4 +1,3 @@
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 const SEND_MESSAGE = "SEND-MESSAGE";
 
 const initialState = {
@@ -13,7 +12,6 @@ const initialState = {
         {name: "I", date: "17 june 2020 20:29", text: "trololo"},
         {name: "Orange Boss", date: "17 june 2020 20:29", text: "abrakadabra"},
     ],
-    newMessageText: "",
 };
 
 export const dialogsReducer = (state = initialState, action) => {
@@ -23,7 +21,7 @@ export const dialogsReducer = (state = initialState, action) => {
             const newMessage = {
                 name: "I",
                 date: String(new Date()),
-                text: state.newMessageText,
+                text: action.message,
             };
             const stateCopy = {
                 ...state,
@@ -32,26 +30,14 @@ export const dialogsReducer = (state = initialState, action) => {
             stateCopy.newMessageText = "";
             return stateCopy;
         }
-        case UPDATE_NEW_MESSAGE_TEXT: {
-            const stateCopy = {...state};
-            stateCopy.newMessageText = action.newText;
-            return stateCopy;
-        }
-
         default:
             return state;
     }
 };
 
-export const sendMessageActionCreator = () => {
+export const sendMessageActionCreator = (message) => {
     return {
         type: SEND_MESSAGE,
-    }
-};
-
-export const updateNewMessageTextActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        newText: text,
+        message
     }
 };
