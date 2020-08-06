@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7494ff2d-3d4c-49dc-b3d1-a0cd3f8e36fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/ProfileStatus.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/Components/common/FormsControls/FormsControls.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/Components/common/FormsControls/FormsControls.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/utils/validators.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Dialogs/NewMessage/NewMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Dialogs/NewMessage/NewMessage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Dialogs/NewMessage/NewMessageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Dialogs/NewMessage/NewMessageContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/NewPost/NewPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/NewPost/NewPost.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/NewPost/NewPostContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/NewPost/NewPostContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/hoc/withAuthRedirect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/redux/dialogs-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/dialogs-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/profile-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Preloader/Preloader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/common/Preloader/Preloader.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -62,19 +56,19 @@
     <property name="ts.external.directory.path" value="D:\Program Files\PhpStorm 2019.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\react\my-app\src\Components\common" />
+      <recent name="D:\react\my-app\src\Components\Content\Dialogs\Messages" />
+      <recent name="D:\react\my-app\src\Components\Content\Profile\Posts" />
+      <recent name="D:\react\my-app\src\usersPhoto" />
+      <recent name="D:\react\my-app\src\Components\Content\Dialogs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\react\my-app\src\Components\Content\Dialogs" />
       <recent name="D:\react\my-app\src\Components\Header" />
       <recent name="D:\react\my-app\src\redux" />
       <recent name="D:\react\my-app\src\Components\Content\Profile" />
       <recent name="D:\react\my-app\src\Components\Content\Profile\Posts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\react\my-app\src\Components\Content\Dialogs\Messages" />
-      <recent name="D:\react\my-app\src\Components\Content\Profile\Posts" />
-      <recent name="D:\react\my-app\src\usersPhoto" />
-      <recent name="D:\react\my-app\src\Components\Content\Dialogs" />
-      <recent name="D:\react\my-app\src\Components\Content" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -124,7 +118,7 @@
       <workItem from="1595924790092" duration="608000" />
       <workItem from="1596007831616" duration="1195000" />
       <workItem from="1596094118702" duration="4208000" />
-      <workItem from="1596634034686" duration="314000" />
+      <workItem from="1596634034686" duration="6871000" />
     </task>
     <task id="LOCAL-00001" summary="60(withRouter)">
       <created>1594299521570</created>
@@ -161,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594895963192</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="76(redux-form)">
+      <created>1596700018249</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596700018249</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +174,8 @@
     <MESSAGE value="66(thunk)" />
     <MESSAGE value="69(hoc)" />
     <MESSAGE value="70(compose)" />
-    <option name="LAST_COMMIT_MESSAGE" value="70(compose)" />
+    <MESSAGE value="76(redux-form)" />
+    <option name="LAST_COMMIT_MESSAGE" value="76(redux-form)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594900834528">
@@ -188,10 +190,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593779639549" />
-    <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1594895962020">
+    <state x="320" y="0" key="CommitChangelistDialog2" timestamp="1596700015805">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="320" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594895962020" />
+    <state x="320" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596700015805" />
     <state x="499" y="110" key="FileChooserDialogImpl" timestamp="1596012337175">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -200,10 +202,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591868245751" />
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1594895966478">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1596700021154">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594895966478" />
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596700021154" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591905104835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

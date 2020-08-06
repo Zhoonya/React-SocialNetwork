@@ -2,12 +2,17 @@ import React from "react";
 import styles from "./NewPost.module.css";
 import ava from "../../../../usersPhoto/ava.jpg";
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, required} from "../../../../utils/validators";
+import {Textarea} from "../../../common/FormsControls/FormsControls";
+
+const maxLength10 = maxLengthCreator(10);
 
 function NewPostForm(props) {
     return (
         <form action="" className={styles.form} onSubmit={props.handleSubmit}>
-                <Field component="textarea" name="post" value={props.text} className={styles.textarea}
-                       cols="30" rows="10" placeholder="Write anything..."/>
+                <Field component={Textarea} name="post" value={props.text} className={styles.textarea}
+                       cols="30" rows="10" placeholder="Write anything..."
+                validate={[required, maxLength10]}/>
             <button className={styles.add} type="submit">Add</button>
         </form>
     )

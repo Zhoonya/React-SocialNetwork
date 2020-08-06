@@ -4,7 +4,7 @@ import ava from "../../../usersPhoto/ava.jpg";
 import NewPostContainer from "./NewPost/NewPostContainer";
 import PostsContainer from "./Posts/PostsContainer";
 import ProfileStatus from "./ProfileStatus";
-import Preloader from "../../Preloader/Preloader";
+import Preloader from "../../common/Preloader/Preloader";
 import photo from "../../../usersPhoto/04.png";
 
 

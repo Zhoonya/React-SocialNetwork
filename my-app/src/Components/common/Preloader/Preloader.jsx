@@ -1,5 +1,5 @@
 import React from "react";
-import preloader from "../../images/preloader.svg";
+import preloader from "../../../images/preloader.svg";
 
 export default function Preloader () {
     return (
