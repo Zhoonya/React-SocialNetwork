@@ -8,7 +8,9 @@ export default function Header (props) {
         <header className={styles.header}>
             <img className={styles.logo} src={logo} alt="logo" />
             <p  className={styles.login}>
-                {props.isAuth ? props.login : <NavLink className={styles.loginLink} to={"/login"}>Login</NavLink>}
+                {props.isAuth ?
+                    <div>{props.login} <button onClick={props.logout}>LogOut</button></div>
+                    : <NavLink className={styles.loginLink} to={"/login"}>Login</NavLink>}
             </p>
 
         </header>

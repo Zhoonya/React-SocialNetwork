@@ -12,7 +12,7 @@ const initialState = {
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_DATA: {
-            const stateCopy = {...state, ...action.data, isAuth: true};
+            const stateCopy = {...state, ...action.data};
             return stateCopy;
         }
         default:
@@ -20,10 +20,11 @@ export const authReducer = (state = initialState, action) => {
     }
 };
 
-export const setUserDataActionCreator = (userId, email, login) => {
+export const setUserDataActionCreator = (userId, email, login, isAuth) => {
     return {
         type: SET_USER_DATA,
-        data: {userId, email, login}
+        data: {userId, email, login, isAuth},
+
     }
 };
 
@@ -34,9 +35,38 @@ export const getUserDataThunkCreator = () => {
                 .then((response) => {
                     if (response.data.resultCode === 0) {
                         let {id, email, login} = response.data.data;
-                        dispatch(setUserDataActionCreator(id, email, login));
+                        dispatch(setUserDataActionCreator(id, email, login, true));
                     }
                 });
+        }
+    )
+};
+
+export const loginThunkCreator = (email, password, rememberMe) => {
+    return (
+        (dispatch) => {
+            authAPI.login(email, password, rememberMe)
+                .then((response) => {
+                    if (response.data.resultCode === 0) {
+                        console.log();
+                        dispatch(getUserDataThunkCreator());
+                    } else {
+                        console.log(response.data);
+                    }
+                })
+        }
+    )
+};
+
+export const logoutThunkCreator = () => {
+    return (
+        (dispatch) => {
+            authAPI.logout()
+                .then((response) => {
+                    if (response.data.resultCode === 0) {
+                        dispatch(setUserDataActionCreator(null, null, null, false));
+                    }
+                })
         }
     )
 };
