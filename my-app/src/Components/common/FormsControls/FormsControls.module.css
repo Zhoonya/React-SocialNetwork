@@ -4,3 +4,8 @@
 .formControl.error input {
     border: 1px solid red;
 }
+
+.formSummaryError {
+    color: red;
+}
+

@@ -5,12 +5,14 @@ import {maxLengthCreator, required} from "../../utils/validators";
 import {connect} from "react-redux";
 import {loginThunkCreator} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import styles from "../common/FormsControls/FormsControls.module.css"
 
 const maxLength10 = maxLengthCreator(10);
 
 function LoginForm (props) {
     return (
         <form action="" onSubmit={props.handleSubmit}>
+            {props.error && <p className={styles.formSummaryError}>{props.error}</p>}
             <div>
                 <Field component={Input} name="login" type="text" placeholder="Login" validate={[required]}/>
             </div>

@@ -5,9 +5,9 @@ import {getUserDataThunkCreator, logoutThunkCreator} from "../../redux/auth-redu
 
 class HeaderContainer extends React.Component {
 
-    componentDidMount() {
-        this.props.getUserData();
-    }
+    // componentDidMount() {
+    //     this.props.getUserData();
+    // }
 
     render() {
         return (
@@ -23,4 +23,4 @@ let mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {getUserData: getUserDataThunkCreator, logout: logoutThunkCreator})(HeaderContainer);
+export default connect(mapStateToProps, {logout: logoutThunkCreator})(HeaderContainer);
