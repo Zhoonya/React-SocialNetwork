@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 export default function ProfileStatus (props) {
 
@@ -17,6 +17,10 @@ export default function ProfileStatus (props) {
     const onStatusChange = (e) => {
         setStatus(e.currentTarget.value);
     };
+
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status]);
 
     if (!editMode) {
         return (
