@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7494ff2d-3d4c-49dc-b3d1-a0cd3f8e36fb" name="Default Changelist" comment="84(hook)">
+    <list default="true" id="7494ff2d-3d4c-49dc-b3d1-a0cd3f8e36fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/my-app/src/Components/common/Paginator/Paginator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-app/src/hoc/withSuspense.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Content/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Content/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +46,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-big-trip" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Bower" />
     <property name="ts.external.directory.path" value="D:\Program Files\PhpStorm 2019.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -114,7 +118,8 @@
       <workItem from="1597072499605" duration="11462000" />
       <workItem from="1597389956915" duration="2748000" />
       <workItem from="1597649843479" duration="3926000" />
-      <workItem from="1597750763510" duration="322000" />
+      <workItem from="1597750763510" duration="11031000" />
+      <workItem from="1598254628263" duration="5730000" />
     </task>
     <task id="LOCAL-00001" summary="60(withRouter)">
       <created>1594299521570</created>
@@ -200,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597317789551</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="91(астройка store для браузерного расширения Redux DevTools)">
+      <created>1597751192285</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597751192286</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +231,8 @@
     <MESSAGE value="80(инициализация приложения)" />
     <MESSAGE value="81(selectors)" />
     <MESSAGE value="84(hook)" />
-    <option name="LAST_COMMIT_MESSAGE" value="84(hook)" />
+    <MESSAGE value="91(астройка store для браузерного расширения Redux DevTools)" />
+    <option name="LAST_COMMIT_MESSAGE" value="91(астройка store для браузерного расширения Redux DevTools)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="507" y="197" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594900834528">
@@ -234,10 +247,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593779639549" />
-    <state x="382" y="0" key="CommitChangelistDialog2" timestamp="1597400487455">
+    <state x="313" y="0" key="CommitChangelistDialog2" timestamp="1597751190634">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="382" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1597400487455" />
+    <state x="313" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1597751190634" />
     <state x="499" y="110" key="FileChooserDialogImpl" timestamp="1597650194029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -246,22 +259,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="161" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591868245751" />
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1597321506193">
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2" timestamp="1597751194969">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597321506193" />
+    <state x="261" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1597751194969" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591905104835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1591905104835" />
-    <state x="398" y="75" width="740" height="674" key="find.popup" timestamp="1597393569121">
+    <state x="398" y="75" width="740" height="674" key="find.popup" timestamp="1598266620821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="398" y="75" width="740" height="674" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1597393569121" />
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1594817853098">
+    <state x="398" y="75" width="740" height="674" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1598266620821" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1598265780620">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594817853098" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598265780620" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
