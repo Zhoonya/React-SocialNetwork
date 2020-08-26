@@ -43,18 +43,31 @@ export const profileAPI = {
         return (instanceAxios.get(`profile/status/${userId}`));
     },
     updateStatus(status) {
-        return (instanceAxios.put(`profile/status`, {status: status}));
+        return (instanceAxios.put("profile/status", {status: status}));
     },
+    changePhoto(photoFile) {
+        const formData = new FormData();
+        formData.append("image", photoFile);
+
+        return (instanceAxios.put("profile/photo", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }))
+    },
+    updateProfile(profileData) {
+        return (instanceAxios.put("profile", profileData));
+    }
 };
 
 export const authAPI = {
     me() {
-        return (instanceAxios.get(`auth/me`));
+        return (instanceAxios.get("auth/me"));
     },
     login(email, password, rememberMe = false) {
-        return (instanceAxios.post(`auth/login`, {email, password, rememberMe}))
+        return (instanceAxios.post("auth/login", {email, password, rememberMe}))
     },
     logout() {
-        return (instanceAxios.delete(`auth/login`))
+        return (instanceAxios.delete("auth/login"))
     }
 };

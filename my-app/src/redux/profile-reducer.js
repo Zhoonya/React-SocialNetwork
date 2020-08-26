@@ -1,8 +1,11 @@
 import {usersAPI, profileAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
+const SET_PHOTO = "SET_PHOTO";
+const SET_PROFILE_DATA = "SET_PROFILE_DATA";
 
 const initialState = {
     posts: [
@@ -40,6 +43,14 @@ export const profileReducer = (state = initialState, action) => {
             const stateCopy = {...state, status: action.status};
             return stateCopy;
         }
+        case SET_PHOTO: {
+            const stateCopy = {...state, profile: {...state.profile, photos: action.photos}};
+            return stateCopy;
+        }
+        case SET_PROFILE_DATA: {
+            const stateCopy = {...state, profile: {...action.profileData}};
+            return stateCopy;
+        }
         default:
             return state;
     }
@@ -64,6 +75,13 @@ export const setStatusActionCreator = (status) => {
         type: SET_STATUS,
         status
     };
+};
+
+export const setPhotoActionCreator = (photos) => {
+    return {
+        type: SET_PHOTO,
+        photos,
+    }
 };
 
 export const getUserProfileThunkCreator = (userId) => {
@@ -91,7 +109,41 @@ export const updateStatusThunkCreator = (status) => {
                 if (response.data.resultCode === 0) {
                     dispatch(setStatusActionCreator(status));
                 }
-
             });
     })
 };
+
+export const changePhotoThunkCreator = (photoFile) => {
+    return ((dispatch) => {
+        profileAPI.changePhoto(photoFile)
+            .then((response) => {
+                if (response.data.resultCode === 0) {
+                    dispatch(setPhotoActionCreator(response.data.data.photos));
+                }
+            })
+    })
+};
+
+export const updateProfileDataThunkCreator = (profileData) => async (dispatch, getState) => {
+        const userId = getState().auth.userId;
+        // profileAPI.updateProfile(profileData)
+        //     .then((response) => {
+        //         if (response.data.resultCode === 0) {
+        //             dispatch(getUserProfileThunkCreator(userId));
+        //         } else {
+        //             let message = response.data.messages.length > 0 ? response.data.messages : "";
+        //             dispatch(stopSubmit("profile", {_error: message}));
+        //             return Promise.reject(response.data.messages[0]);
+        //         }
+        //     })
+
+        const response = await profileAPI.updateProfile(profileData);
+
+        if (response.data.resultCode === 0) {
+            dispatch(getUserProfileThunkCreator(userId));
+        } else {
+            let message = response.data.messages.length > 0 ? response.data.messages : "";
+            dispatch(stopSubmit("profile", {_error: message}));
+            return Promise.reject(response.data.messages[0]);
+        }
+    };

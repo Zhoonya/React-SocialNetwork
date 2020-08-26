@@ -19,3 +19,29 @@
     vertical-align: top;
     margin-top: 0;
 }
+
+.photoInput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.photoInput + label {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: rgb(239, 239, 239);
+}
+
+.photoInput:focus + label,
+.photoInput + label:hover {
+    background-color: #3792CB;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
