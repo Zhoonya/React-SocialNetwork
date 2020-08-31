@@ -64,10 +64,16 @@ export const authAPI = {
     me() {
         return (instanceAxios.get("auth/me"));
     },
-    login(email, password, rememberMe = false) {
-        return (instanceAxios.post("auth/login", {email, password, rememberMe}))
+    login(email, password, rememberMe = false, captcha = null) {
+        return (instanceAxios.post("auth/login", {email, password, rememberMe, captcha}))
     },
     logout() {
         return (instanceAxios.delete("auth/login"))
+    }
+};
+
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instanceAxios.get("security/get-captcha-url");
     }
 };

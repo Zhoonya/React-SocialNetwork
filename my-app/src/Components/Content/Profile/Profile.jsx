@@ -21,7 +21,6 @@ export default function Profile (props) {
         }
     };
 
-    console.log(props);
     return (
         <div className={styles.content}>
             <div className="item">

@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {loginThunkCreator} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import styles from "../common/FormsControls/FormsControls.module.css"
+import {createField} from "../common/FormsControls/FormsControls";
 
 const maxLength10 = maxLengthCreator(10);
 
@@ -22,6 +23,10 @@ function LoginForm (props) {
             <div>
                 <Field component={Input} name="remember" type="checkbox" /> Remember me
             </div>
+
+            {props.captchaUrl && <img src={props.captchaUrl} />}
+            {props.captchaUrl &&  createField("Symbols from image", "captcha", [required], Input, {}) }
+
             <div>
                 <button type="submit">LogIn</button>
             </div>
@@ -36,7 +41,7 @@ const LoginReduxForm = reduxForm({
 export function Login (props) {
 
     const onSubmit = (formData) => {
-        props.login(formData.login, formData.password, formData.rememberMe);
+        props.login(formData.login, formData.password, formData.rememberMe, formData.captcha);
     };
 
     if (props.isAuth) {
@@ -46,7 +51,7 @@ export function Login (props) {
     return (
         <div>
             <h2>Login</h2>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
         </div>
 
     )
@@ -54,6 +59,7 @@ export function Login (props) {
 
 const mapStateToProps = (state) => {
     return ({
+        captchaUrl: state.auth.captchaUrl,
         isAuth: state.auth.isAuth,
     })
 };
